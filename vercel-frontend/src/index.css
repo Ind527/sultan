@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 122 39% 49%;    /* #4CAF50 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 88 50% 53%;   /* #8BC34A */
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 25 25% 47%;      /* #8D6E63 */
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 122 39% 49%;       /* Match primary */
+  --radius: 0.5rem;
+
+  /* Custom variables for site */
+  --light-bg: 120 100% 98.5%; /* #F9FFF9 */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 122 39% 49%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 88 50% 53%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 25 25% 47%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .light-bg {
+    @apply bg-[#F9FFF9];
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20;
+  }
+
+  .leaf-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .leaf-animation-reverse {
+    animation: float-reverse 7s ease-in-out infinite;
+  }
+
+  .whatsapp-float {
+    @apply fixed w-14 h-14 bottom-8 right-8 bg-[#25d366] text-white rounded-full 
+           flex items-center justify-center shadow-md z-50 transition-transform
+           hover:scale-110 hover:bg-[#20ba5a];
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
